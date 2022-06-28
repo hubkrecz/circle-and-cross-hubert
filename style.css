@@ -1,0 +1,59 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+*,
+*::after,
+*::before
+{
+    box-sizing: border-box;
+}
+html
+{
+    overflow-x: hidden;
+}
+body
+{
+    background-color: rgb(68, 0, 0);
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.first-section
+{
+    text-align: center;
+}
+.header__heading
+{
+    text-align: center;
+}
+.playground
+{
+    background-color: burlywood;
+    height: 300px;
+    width: 300px;  
+    margin: 0 auto;  
+    display: flex;
+    align-content: space-around;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.playground__buttons, .first-section__button
+{
+    height: 90px;
+    width: 90px;
+    font-size: 50px;
+}
+.first-section__button
+{
+    
+}
+.reset
+{
+    font-size: 30px;
+    text-align: center;
+    width: 140px;
+    height: 40px;   
+    display: block;
+    margin: 0 auto;
+}
