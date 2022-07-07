@@ -2,6 +2,7 @@ const cross = document.querySelector("#cross");
 const circle = document.querySelector("#circle");
 const board = document.querySelector("#board");
 const reset = document.querySelector("#resetButton");
+const buttons = Array.from(board.children);
 
 const fields =
 {
@@ -37,7 +38,6 @@ const start = (event) => {
     else if (type === "X") {
         wwc = 2;
     }
-    const buttons = Array.from(board.children);
     for (let i = 0; i <= 8; i++) {
         buttons[i].disabled = false;
     }
@@ -47,10 +47,10 @@ const start = (event) => {
 }
 
 const resetFunction = function () {
-    const buttons = Array.from(board.children);
+
     amongus = 0;
 
-    for (let i = 0; i < 9; i++) {
+    for (let i = 0; i <= 8; i++) {
         buttons[i].innerHTML = "";
         buttons[i].disabled = true;
     }
@@ -88,25 +88,84 @@ const replaceByXO = (event) => {
 
 
 const whoWonChecker = () => {
-    if (amongus === 5) {
-        if (justATable[0][0] === "O" && justATable[0][1] === "O" && justATable[0][2] === "O") {
-            setTimeout(() => { alert("Kółko wygrywa") }, 0); console.log("warunek1");
+    if (amongus <= 8) {
+        if (amongus >= 5) {
+            circleWonIfs();
+            crossWonIfs();
         }
-        else if (justATable[1][0] === "O" && justATable[1][1] === "O" && justATable[1][2] === "O") {
-            setTimeout(() => { alert("Kółko wygrywa") }, 0); console.log("warunek2");
+    }
+    else {
+        for (let i = 0; i <= 8; i++) {
+            buttons[i].disabled = true;
         }
-        else if (justATable[2][0] === "O" && justATable[2][1] === "O" && justATable[2][2] === "O") {
-            setTimeout(() => { alert("Kółko wygrywa") }, 0); console.log("warunek3");
-        }
-        else if (justATable[0][0] === "O" && justATable[1][0] === "O" && justATable[2][0] === "O") {
-            setTimeout(() => { alert("Kółko wygrywa") }, 0); console.log("warunek4");
-        }
-        else if (justATable[0][1] === "O" && justATable[1][1] === "O" && justATable[2][1] === "O") {
-            setTimeout(() => { alert("Kółko wygrywa") }, 0); console.log("warunek5");
-        }
-        else if (justATable[0][2] === "O" && justATable[1][2] === "O" && justATable[2][2] === "O") {
-            setTimeout(() => { alert("Kółko wygrywa") }, 0); console.log("warunek6");
-        }
+        setTimeout(() => { alert("Nikt nie wygrał"), 0 });
+    }
+
+}
+const circleWonIfs = () => {
+    if (justATable[0][0] === "O" && justATable[0][1] === "O" && justATable[0][2] === "O") {
+        circleWon();
+    }
+    else if (justATable[1][0] === "O" && justATable[1][1] === "O" && justATable[1][2] === "O") {
+        circleWon();
+    }
+    else if (justATable[2][0] === "O" && justATable[2][1] === "O" && justATable[2][2] === "O") {
+        circleWon();
+    }
+    else if (justATable[0][0] === "O" && justATable[1][0] === "O" && justATable[2][0] === "O") {
+        circleWon();
+    }
+    else if (justATable[0][1] === "O" && justATable[1][1] === "O" && justATable[2][1] === "O") {
+        circleWon();
+    }
+    else if (justATable[0][2] === "O" && justATable[1][2] === "O" && justATable[2][2] === "O") {
+        circleWon();
+    }
+    else if (justATable[0][0] === "O" && justATable[1][1] === "O" && justATable[2][2] === "O") {
+        circleWon();
+    }
+    else if (justATable[0][2] === "O" && justATable[1][1] === "O" && justATable[2][0] === "O") {
+        circleWon();
+    }
+
+}
+const crossWonIfs = () => {
+    if (justATable[0][0] === "X" && justATable[0][1] === "X" && justATable[0][2] === "X") {
+        crossWon();
+    }
+    else if (justATable[1][0] === "X" && justATable[1][1] === "X" && justATable[1][2] === "X") {
+        crossWon();
+    }
+    else if (justATable[2][0] === "X" && justATable[2][1] === "X" && justATable[2][2] === "X") {
+        crossWon();
+    }
+    else if (justATable[0][0] === "X" && justATable[1][0] === "X" && justATable[2][0] === "X") {
+        crossWon();
+    }
+    else if (justATable[0][1] === "X" && justATable[1][1] === "X" && justATable[2][1] === "X") {
+        crossWon();
+    }
+    else if (justATable[0][2] === "X" && justATable[1][2] === "X" && justATable[2][2] === "X") {
+        crossWon();
+    }
+    else if (justATable[0][0] === "X" && justATable[1][1] === "X" && justATable[2][2] === "X") {
+        crossWon();
+    }
+    else if (justATable[0][2] === "X" && justATable[1][1] === "X" && justATable[2][0] === "X") {
+        crossWon();
+    }
+
+}
+const circleWon = () => {
+    setTimeout(() => { alert("Kółko wygrywa") }, 0);
+    for (let i = 0; i <= 8; i++) {
+        buttons[i].disabled = true;
+    }
+}
+const crossWon = () => {
+    setTimeout(() => { alert("Krzyżyk wygrywa") }, 0);
+    for (let i = 0; i <= 8; i++) {
+        buttons[i].disabled = true;
     }
 }
 
