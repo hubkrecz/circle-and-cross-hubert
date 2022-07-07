@@ -1,39 +1,42 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href="./style.css">
-<title>circle and cross</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <title>circle and cross</title>
 </head>
+
 <body>
-<main>
-    <article>
-        <header class="header">
-            <h1 class="header__heading">Kółko i krzyżyk</h1>
-        </header>
+    <main>
+        <article>
+            <header class="header">
+                <h1 class="header__heading">Kółko i krzyżyk</h1>
+            </header>
 
-        <section class="first-section">
-            <h2 class="first-section__heading">Kto zaczyna?</h2>
-            <button id="cross" type="button" class="first-section__button">X</button>
-            <button id="circle" type="button" class="first-section__button">O</button>
-        </section>
+            <section class="first-section">
+                <h2 class="first-section__heading">Kto zaczyna?</h2>
+                <button id="cross" type="button" class="first-section__button">X</button>
+                <button id="circle" type="button" class="first-section__button">O</button>
+            </section>
 
-        <div class="playground" id="board">
-            <button disabled data-id = "0.0" type="button" class="playground__buttons"></button>
-            <button disabled data-id = "0.1" type="button" class="playground__buttons"></button>
-            <button disabled data-id = "0.2" type="button" class="playground__buttons"></button>
-            <button disabled data-id = "1.0" type="button" class="playground__buttons"></button>
-            <button disabled data-id = "1.1" type="button" class="playground__buttons"></button>
-            <button disabled data-id = "1.2" type="button" class="playground__buttons"></button>
-            <button disabled data-id = "2.0" type="button" class="playground__buttons"></button>
-            <button disabled data-id = "2.1" type="button" class="playground__buttons"></button>
-            <button disabled data-id = "2.2" type="button" class="playground__buttons"></button>
-        </div>
-        <button id="resetButton" type="button" class="reset">Reset</button>
-    </article>
-</main>
-<script src="./src/script.js"></script>
+            <div class="playground" id="board">
+                <button disabled data-id="0.0" type="button" class="playground__buttons"></button>
+                <button disabled data-id="0.1" type="button" class="playground__buttons"></button>
+                <button disabled data-id="0.2" type="button" class="playground__buttons"></button>
+                <button disabled data-id="1.0" type="button" class="playground__buttons"></button>
+                <button disabled data-id="1.1" type="button" class="playground__buttons"></button>
+                <button disabled data-id="1.2" type="button" class="playground__buttons"></button>
+                <button disabled data-id="2.0" type="button" class="playground__buttons"></button>
+                <button disabled data-id="2.1" type="button" class="playground__buttons"></button>
+                <button disabled data-id="2.2" type="button" class="playground__buttons"></button>
+            </div>
+            <button id="resetButton" type="button" class="reset">Reset</button>
+        </article>
+    </main>
+    <script src="./src/script.js"></script>
 </body>
+
 </html>
